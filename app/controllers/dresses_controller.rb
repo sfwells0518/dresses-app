@@ -21,4 +21,16 @@ class DressesController < ApplicationController
     render :show
     # render json: { message: "hello dress create" }
   end
+
+  def update
+    @dress = Dress.find_by(id: params[:id])
+    @dress.material = params[:material] || @dress.material
+    @dress.name = params[:name] || @dress.name
+    @dress.price = params[:price] || @dress.price
+
+    @dress.save
+    render :show
+
+    # render json: { message: "hello dress update" }
+  end
 end
