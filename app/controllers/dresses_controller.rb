@@ -10,4 +10,8 @@ class DressesController < ApplicationController
     render :show
     # render json: { message: "hello dress show" }
   end
+
+  def create
+    # render json: { message: "hello dress create" }
+  end
 end
