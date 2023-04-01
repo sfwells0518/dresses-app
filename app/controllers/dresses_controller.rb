@@ -33,4 +33,10 @@ class DressesController < ApplicationController
 
     # render json: { message: "hello dress update" }
   end
+
+  def destroy
+    @dress = Dress.find_by(id: params[:id])
+    @dress.destroy
+    render json: { message: "Dress has been successfully removed" }
+  end
 end
