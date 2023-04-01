@@ -12,6 +12,13 @@ class DressesController < ApplicationController
   end
 
   def create
+    @dress = Dress.new(
+      material: params[:material],
+      name: params[:name],
+      price: params[:price],
+    )
+    @dress.save
+    render :show
     # render json: { message: "hello dress create" }
   end
 end
